@@ -1,0 +1,7 @@
+djangorestframework==3.9.2
+django-rest-swagger==2.2.0
+django-cors-headers==2.5.2
+Django==1.11.29
+psycopg2==2.8.1
+djangorestframework-recursive==0.1.2
+djoser==1.1.5
