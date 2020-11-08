@@ -5,3 +5,4 @@ Django==1.11.29
 psycopg2==2.8.1
 djangorestframework-recursive==0.1.2
 djoser==1.1.5
+django-filter==2.0.0

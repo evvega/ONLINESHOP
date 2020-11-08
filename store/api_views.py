@@ -1,6 +1,8 @@
 from rest_framework import viewsets
-from .models import *
 from .serializers import *
+from .filters import *
+from django_filters.rest_framework import DjangoFilterBackend
+from rest_framework.filters import SearchFilter, OrderingFilter
 
 
 class TutorialViewSet(viewsets.ModelViewSet):
@@ -18,7 +20,9 @@ class TutorialViewSet(viewsets.ModelViewSet):
     delete:
     Delete  an existing contact instance.
     """
-
     serializer_class = TutorialSerializer
     queryset = Tutorial.objects.all()
     ordering_fields = '__all__'
+    filter_class = TutorialFilter
+    filter_backends = (DjangoFilterBackend, SearchFilter, OrderingFilter,)
+    search_fields = ('title',)
